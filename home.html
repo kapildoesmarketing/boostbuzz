@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoostBuzz - Fuel Your Best</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light gray background */
+        }
+        /* Custom styles for animations and specific elements if needed beyond Tailwind */
+        .page-section {
+            display: none; /* Hidden by default */
+        }
+        .page-section.active {
+            display: block; /* Show active page */
+            animation: fadeIn 0.7s ease-out; /* Fade in animation */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-link.active {
+            border-b-2 border-emerald-500 text-emerald-500;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-gradient-to-r from-emerald-400 to-green-500 p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <!-- Brand Logo and Slogan -->
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/0284c7/ffffff?text=BB" alt="BoostBuzz Logo" class="rounded-full shadow-md">
+                <span class="text-white text-2xl font-bold tracking-tight">BoostBuzz</span>
+                <span class="text-white text-sm italic hidden md:block">- Fuel Your Best, Naturally!</span>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 w-full md:w-auto items-center">
+                <a href="#home" class="nav-link text-white hover:text-emerald-100 transition duration-300 py-2 px-3 rounded-md text-lg font-medium" data-page="home">Home</a>
+                <a href="#products" class="nav-link text-white hover:text-emerald-100 transition duration-300 py-2 px-3 rounded-md text-lg font-medium" data-page="products">Our Products</a>
+                <a href="#about" class="nav-link text-white hover:text-emerald-100 transition duration-300 py-2 px-3 rounded-md text-lg font-medium" data-page="about">About Us</a>
+                <a href="#contact" class="nav-link text-white hover:text-emerald-100 transition duration-300 py-2 px-3 rounded-md text-lg font-medium" data-page="contact">Contact Us</a>
+                <a href="#blog" class="nav-link text-white hover:text-emerald-100 transition duration-300 py-2 px-3 rounded-md text-lg font-medium" data-page="blog">Health Tips</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+
+        <!-- Home Section -->
+        <section id="home-section" class="page-section active">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10 mb-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-4">
+                            Unlock Your Potential with <span class="text-emerald-600">BoostBuzz</span>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Discover clean, plant-based supplements designed to energize your life, boost immunity, and fuel your fitness journey. Join the BoostBuzz community today!
+                        </p>
+                        <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                            Explore Products
+                        </button>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/9ade9d/333333?text=Hero+Image+-+Healthy+Life" alt="BoostBuzz Hero Image" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Introduction -->
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Our Commitment to Your Health</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-leaf text-5xl text-emerald-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Plant-Based Goodness</h3>
+                        <p class="text-gray-600">All our products are crafted from the finest plant-based ingredients, ensuring purity and potency.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-battery-full text-5xl text-emerald-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Natural Energy Boost</h3>
+                        <p class="text-gray-600">Experience sustained energy without the jitters, perfect for active lifestyles.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-shield-alt text-5xl text-emerald-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Immunity Support</h3>
+                        <p class="text-gray-600">Strengthen your body's defenses with our carefully formulated immunity boosters.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials/Influencer Quotes -->
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">What Our Community Says</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-emerald-50 p-6 rounded-lg shadow-md">
+                        <p class="italic text-gray-700 mb-4">"BoostBuzz protein powder is a game-changer! I feel more energized and my recovery is much faster. Plus, it tastes amazing!"</p>
+                        <p class="font-semibold text-right text-emerald-700">- Jane Doe, Fitness Enthusiast</p>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-lg shadow-md">
+                        <p class="italic text-gray-700 mb-4">"As a health blogger, I'm always looking for clean supplements. BoostBuzz immunity boosters are now a staple in my routine. Highly recommend!"</p>
+                        <p class="font-semibold text-right text-emerald-700">- John Smith, Health Blogger</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Products Section -->
+        <section id="products-section" class="page-section">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-10 text-center">Explore Our Plant-Powered Range</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product 1: Protein Powder -->
+                    <div class="bg-emerald-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/200x200/9acd32/ffffff?text=Protein+Powder" alt="BoostBuzz Protein Powder" class="w-48 h-48 object-cover rounded-full mb-4 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Plant-Based Protein Powder</h3>
+                        <p class="text-gray-600 mb-4">A delicious blend of pea and rice protein, perfect for muscle recovery and daily nutrition. Available in Vanilla and Chocolate.</p>
+                        <ul class="text-left text-gray-700 list-disc list-inside mb-4">
+                            <li>20g protein per serving</li>
+                            <li>Zero artificial sweeteners</li>
+                            <li>Easy to mix & digest</li>
+                        </ul>
+                        <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-5 rounded-full shadow-md">
+                            Buy Now
+                        </button>
+                    </div>
+
+                    <!-- Product 2: Immunity Boosters -->
+                    <div class="bg-emerald-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/200x200/4c8bf5/ffffff?text=Immunity+Boosters" alt="BoostBuzz Immunity Boosters" class="w-48 h-48 object-cover rounded-full mb-4 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Daily Immunity Boosters</h3>
+                        <p class="text-gray-600 mb-4">Packed with Vitamin C, Zinc, and Echinacea to strengthen your immune system naturally.</p>
+                        <ul class="text-left text-gray-700 list-disc list-inside mb-4">
+                            <li>Supports daily wellness</li>
+                            <li>Natural berry flavor</li>
+                            <li>Travel-friendly capsules</li>
+                        </ul>
+                        <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-5 rounded-full shadow-md">
+                            Buy Now
+                        </button>
+                    </div>
+
+                    <!-- Product 3: Energy Bars -->
+                    <div class="bg-emerald-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/200x200/f39c12/ffffff?text=Energy+Bars" alt="BoostBuzz Energy Bars" class="w-48 h-48 object-cover rounded-full mb-4 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Nutrient-Rich Energy Bars</h3>
+                        <p class="text-gray-600 mb-4">The perfect on-the-go snack, loaded with nuts, seeds, and fruits for sustained energy.</p>
+                        <ul class="text-left text-gray-700 list-disc list-inside mb-4">
+                            <li>High fiber content</li>
+                            <li>No added sugars</li>
+                            <li>Delicious chocolate-chip flavor</li>
+                        </ul>
+                        <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-5 rounded-full shadow-md">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about-section" class="page-section">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center">Our Story: Fueling Health, Naturally</h2>
+
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-10">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/b0e0e6/333333?text=Team+Working" alt="Our Story Image" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                    </div>
+                    <div class="md:w-1/2 text-gray-700">
+                        <h3 class="text-2xl font-bold text-emerald-600 mb-4">The BoostBuzz Journey</h3>
+                        <p class="mb-4">BoostBuzz was born from a simple idea: to make healthy living accessible and enjoyable for everyone. Our founders, a group of fitness enthusiasts and nutritionists, were frustrated by the artificial ingredients and misleading claims in the supplement industry.</p>
+                        <p class="mb-4">They envisioned a brand that prioritized purity, transparency, and the power of nature. After years of research and development, BoostBuzz emerged with a line of plant-based products designed to truly nourish your body and mind.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Our Values & Mission</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-emerald-50 p-6 rounded-lg shadow-md">
+                        <i class="fas fa-hand-holding-heart text-5xl text-emerald-500 mb-4"></i>
+                        <h4 class="text-xl font-semibold text-gray-700 mb-2">Authenticity</h4>
+                        <p class="text-gray-600">We believe in honest ingredients and transparent practices, building trust with our community.</p>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-lg shadow-md">
+                        <i class="fas fa-bolt text-5xl text-emerald-500 mb-4"></i>
+                        <h4 class="text-xl font-semibold text-gray-700 mb-2">Energy</h4>
+                        <p class="text-gray-600">We create products that empower you to live with vitality and enthusiasm every day.</p>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-lg shadow-md">
+                        <i class="fas fa-users text-5xl text-emerald-500 mb-4"></i>
+                        <h4 class="text-xl font-semibold text-gray-700 mb-2">Community</h4>
+                        <p class="text-gray-600">We foster a supportive environment where health journeys are shared and celebrated.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact-section" class="page-section">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center">Get Healthy With Us!</h2>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <p class="text-lg text-gray-700 mb-6">Have questions about our products, your health journey, or just want to say hello? Reach out to us!</p>
+
+                        <!-- Contact Form Placeholder -->
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent" placeholder="your.email@example.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent" placeholder="Tell us how we can help..."></textarea>
+                            </div>
+                            <button type="submit" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="md:w-1/2 bg-emerald-50 p-6 rounded-lg shadow-md flex flex-col justify-center items-center text-center">
+                        <p class="text-xl font-bold text-gray-800 mb-4">Prefer to email us directly?</p>
+                        <a href="mailto:info@boostbuzz.com" class="text-emerald-600 hover:text-emerald-800 text-lg font-semibold flex items-center mb-6">
+                            <i class="fas fa-envelope mr-2"></i> info@boostbuzz.com
+                        </a>
+
+                        <p class="text-xl font-bold text-gray-800 mb-4">Connect with us on Social Media!</p>
+                        <div class="flex space-x-6">
+                            <a href="https://facebook.com/boostbuzz" target="_blank" class="text-blue-600 hover:text-blue-800 text-3xl transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://instagram.com/boostbuzz" target="_blank" class="text-pink-600 hover:text-pink-800 text-3xl transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/boostbuzz" target="_blank" class="text-blue-400 hover:text-blue-600 text-3xl transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://youtube.com/boostbuzz" target="_blank" class="text-red-600 hover:text-red-800 text-3xl transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog/Health Tips Section -->
+        <section id="blog-section" class="page-section">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+                <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center">Health Tips & Insights</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <!-- Blog Post 1 -->
+                    <article class="bg-emerald-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/600x300/a3e635/333333?text=Blog+Image+1" alt="Healthy Eating Tips" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">5 Simple Ways to Boost Your Daily Energy</h3>
+                            <p class="text-gray-600 mb-4">Discover practical tips and tricks to naturally increase your energy levels without relying on caffeine or artificial stimulants...</p>
+                            <a href="#" class="text-emerald-600 hover:text-emerald-800 font-semibold">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 2 -->
+                    <article class="bg-emerald-50 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out">
+                        <img src="https://placehold.co/600x300/fde047/333333?text=Blog+Image+2" alt="Immune System Guide" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">The Ultimate Guide to a Stronger Immune System</h3>
+                            <p class="text-gray-600 mb-4">Learn about essential nutrients, lifestyle habits, and BoostBuzz products that can fortify your body's defenses...</p>
+                            <a href="#" class="text-emerald-600 hover:text-emerald-800 font-semibold">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- YouTube Video Embedding -->
+                <div class="bg-emerald-50 rounded-lg shadow-md p-6 text-center">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Watch Our Latest Health Video!</h3>
+                    <div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-xl mb-4">
+                        <!-- Placeholder for YouTube Embed -->
+                        <iframe
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" <!-- Replace with a relevant YouTube video URL -->
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            class="absolute top-0 left-0 w-full h-full"
+                        ></iframe>
+                    </div>
+                    <p class="text-gray-600">Subscribe to our channel for more health tips and product updates.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-6 md:p-8 text-center mt-auto shadow-inner">
+        <div class="container mx-auto">
+            <p class="mb-2">&copy; 2025 BoostBuzz. All rights reserved.</p>
+            <p class="text-sm">Fueling a healthier you, naturally.</p>
+            <p class="text-sm mt-4 italic">Made with ❤️ by Group 11</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for page navigation and mobile menu
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const navLinksContainer = document.getElementById('nav-links');
+
+            // Function to show a specific page and hide others
+            const showPage = (pageId) => {
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                const targetSection = document.getElementById(`${pageId}-section`);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                // Update active link in navigation
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Hide mobile menu after selection
+                if (navLinksContainer.classList.contains('flex')) {
+                    navLinksContainer.classList.remove('flex');
+                    navLinksContainer.classList.add('hidden');
+                }
+            };
+
+            // Event listeners for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    showPage(pageId);
+                    // Update URL hash for direct linking/refresh
+                    history.pushState(null, '', `#${pageId}`);
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', () => {
+                navLinksContainer.classList.toggle('hidden');
+                navLinksContainer.classList.toggle('flex');
+            });
+
+            // Handle initial page load based on URL hash
+            const initialHash = window.location.hash.substring(1); // Remove '#'
+            if (initialHash && document.getElementById(`${initialHash}-section`)) {
+                showPage(initialHash);
+            } else {
+                // Default to homepage if no hash or invalid hash
+                showPage('home');
+                history.replaceState(null, '', '#home'); // Ensure #home is in URL on first load
+            }
+        });
+    </script>
+</body>
+</html>
